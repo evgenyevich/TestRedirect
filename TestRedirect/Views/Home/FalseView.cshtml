@@ -1,0 +1,11 @@
+﻿@model string 
+@using TestRedirect.Models
+@{
+    ViewBag.Title = "FalseView";
+}
+<body>
+<h2>FalseView</h2>
+    @Html.ActionLink("Назад","Index",new {Qty=RedirectRights.RedirectQty})
+</body>
+
+

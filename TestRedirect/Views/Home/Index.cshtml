@@ -1,0 +1,43 @@
+﻿@model TestRedirect.Models.RedirectRights
+
+@{
+    ViewBag.Title = "Index";
+    Layout = null;
+}
+@*<script type="text/javascript">
+    $(document).ready(function () {
+        setTimeout("DisableBackButton()", 0);
+        window.onunload = function () {
+        };
+    });
+
+    function DisableBackButton() {
+        window.history.forward(1);
+
+    }
+</script>*@
+<h2>Index</h2>
+<body>
+    <input type="hidden" id="refreshed" value="yes" />
+<script type="text/javascript" language="javascript">
+    window.onload = function () {
+        var e = document.getElementById("refreshed");
+        if (e.value == "no") {
+            e.value = "yes";
+        } else {
+            e.value = "no";
+            location.redirectStart("FalseView"); // Reload the page or redirect...
+        }
+    };
+</script>
+    @using (Html.BeginForm("ApplyResult", "Home", FormMethod.Post))
+    {
+        @Html.TextBoxFor(o => o.Qty)
+        @Html.CheckBoxFor(o => o.CanRedirect);
+        <input type="submit" value="Submit" />
+    }
+</body>
+
+
+
+
