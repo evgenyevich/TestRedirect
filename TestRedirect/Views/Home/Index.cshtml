@@ -32,8 +32,11 @@
 </script>
     @using (Html.BeginForm("ApplyResult", "Home", FormMethod.Post))
     {
-        @Html.TextBoxFor(o => o.Qty)
-        @Html.CheckBoxFor(o => o.CanRedirect);
+        @Html.EditorForModel(Model)
+       @Html.DisplayForModel(Model)
+        @Html.LabelForModel(Model)
+        @*@Html.TextBoxFor(o => o.Qty)
+        @Html.CheckBoxFor(o => o.CanRedirect);*@
         <input type="submit" value="Submit" />
     }
 </body>

@@ -23,7 +23,7 @@ namespace TestRedirect
                 qty = 0
             }
             );
-            routes.MapRoute(null,
+            routes.MapRoute("MyRoute",
             "Qty{qty}",
             new { controller = "Home", action = "Index", canredirect = false},new { qty = @"\d+" }
             );
